@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PRIVATE // OBIM</title>
+<style>
+*{box-sizing:border-box} body{margin:0;min-height:100vh;background:#08090d;color:#eeeae3;font-family:Georgia,serif;display:flex;align-items:center;justify-content:center;padding:22px}
+.card{width:min(680px,100%);background:#101116;border:1px solid #30333d;box-shadow:0 25px 80px #000}
+.top{padding:18px 22px;border-bottom:1px solid #30333d;font:11px monospace;letter-spacing:3px;color:#858995;display:flex;justify-content:space-between}
+.body{padding:45px 38px} .mark{font-size:34px;margin-bottom:20px}
+h1{font-size:clamp(34px,8vw,58px);font-weight:400;line-height:1;margin:0 0 14px}
+.sub,.foot{font:11px monospace;letter-spacing:2px;color:#777c88}
+input{width:100%;margin-top:30px;padding:16px;background:#090a0e;border:1px solid #3b3e49;color:white;font:14px monospace;outline:0}
+button{width:100%;margin-top:10px;padding:16px;background:#ed4e75;color:white;border:0;font:bold 11px monospace;letter-spacing:2px;cursor:pointer}
+.err{height:22px;padding-top:10px;color:#ed4e75;font:11px monospace}
+#message{display:none} .line{height:1px;background:#30333d;margin:25px 0 30px}
+p{font-size:18px;line-height:1.85;margin:0 0 22px} .foot{margin-top:32px}
+</style></head>
+<body><main class="card">
+<div class="top"><span>PRIVATE FILE</span><span>OBIM // 001</span></div>
+<div class="body">
+<div id="lock"><div class="mark">⌁</div><h1>Something<br>for you.</h1>
+<div class="sub">THIS MESSAGE IS LOCKED</div>
+<input id="pw" type="password" placeholder="ENTER ACCESS CODE" autocomplete="off">
+<button onclick="unlock()">UNLOCK MESSAGE</button><div id="err" class="err"></div></div>
+<div id="message"><div class="mark">♡</div><div class="sub">ACCESS GRANTED // FOR MY WOMAN</div>
+<div class="line"></div><p>My woman ❤️ My Obim ❤️ Baby&#x27;m</p>
+<p>Having you in my life has brought me a kind of peace and happiness I didn’t even know I needed. Thank you for being my safe place, my best friend, and my baby.</p>
+<p>Out of everybody in this world, somehow I got you, and I’m grateful for that every day.</p>
+<p>You mean more to me than I probably know how to put into words. I love you, I appreciate you, and I’ll always be rooting for you.</p>
+<p>I love you, Obim ❤️</p><div class="foot">END OF PRIVATE FILE</div></div>
+</div></main>
+<script>
+const secret="Nosiriiiii";
+function unlock() {
+ const v=document.getElementById("pw").value;
+ if(v===secret) {
+  document.getElementById("lock").style.display="none";
+  document.getElementById("message").style.display="block";
+ } else {
+  document.getElementById("err").textContent="ACCESS DENIED — TRY AGAIN.";
+  document.getElementById("pw").value="";
+ }
+}
+document.getElementById("pw").addEventListener("keydown",e=>{if(e.key==="Enter")unlock()});
+</script></body></html>
